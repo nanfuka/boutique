@@ -30,6 +30,7 @@ namespace myboutique
 
         {
             services.AddScoped<Imyboutique, SqlMyBoutique>();
+
             services.AddDbContext<MyBoutiqueContext>(opt => opt.UseSqlServer(
                 Configuration.GetConnectionString("MyBoutiqueConenction")
             ));

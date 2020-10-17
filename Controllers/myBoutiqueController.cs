@@ -14,11 +14,10 @@ namespace Myboutique.Cotrollers
         {
             _repositorys = repository;
         }
-        private readonly MyboutiqueImp _repository = new MyboutiqueImp();
         [HttpGet]
         public ActionResult<IEnumerable<Myboutiques>> GetBoutiqueItems()
         {
-            var boutiqItems = _repository.GetBoutiqueItems();
+            var boutiqItems = _repositorys.GetBoutiqueItems();
             return Ok(boutiqItems);
 
         }
@@ -26,7 +25,7 @@ namespace Myboutique.Cotrollers
         [HttpGet("{id}")]
         public ActionResult<Myboutiques> GetShopItemById(int id)
         {
-            var boutiqueItem = _repository.GetShopItemById(id);
+            var boutiqueItem = _repositorys.GetShopItemById(id);
             return Ok(boutiqueItem);
 
         }
