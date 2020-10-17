@@ -29,7 +29,7 @@ namespace myboutique
         public void ConfigureServices(IServiceCollection services)
 
         {
-            services.AddScoped<Imyboutique, MyboutiqueImp>();
+            services.AddScoped<Imyboutique, SqlMyBoutique>();
             services.AddDbContext<MyBoutiqueContext>(opt => opt.UseSqlServer(
                 Configuration.GetConnectionString("MyBoutiqueConenction")
             ));

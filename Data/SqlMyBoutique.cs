@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Myboutique.Models;
+using System.Linq;
 
 namespace Myboutique.Data
 {
@@ -15,12 +16,12 @@ namespace Myboutique.Data
 
         IEnumerable<Myboutiques> Imyboutique.GetBoutiqueItems()
         {
-            throw new System.NotImplementedException();
+            return _context.mayBoutique.ToList();
         }
 
         Myboutiques Imyboutique.GetShopItemById(int id)
         {
-            throw new System.NotImplementedException();
+            return _context.mayBoutique.FirstOrDefault(p => p.id == id);
         }
     }
 }
